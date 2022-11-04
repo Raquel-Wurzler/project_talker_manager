@@ -1,5 +1,7 @@
 const express = require('express');
 const generateToken = require('../utils/generateToken');
+const { validateEmail } = require('../middleware/validateEmail');
+const { validatePassword } = require('../middleware/validatePassword');
 // const path = require('path');
 // const { readingFiles } = require('../utils/readingFiles');
 
@@ -7,7 +9,10 @@ const generateToken = require('../utils/generateToken');
 
 const loginRouter = express.Router();
 
-loginRouter.post('/login', (req, res) => {
+loginRouter.post('/login',
+  validateEmail,
+  validatePassword,
+  (req, res) => {
   try {
     const { email, password } = req.body;
     if (email && password) {
