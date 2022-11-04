@@ -4,6 +4,7 @@ const talkerRouter = require('./routes/talkerRouter');
 
 const app = express();
 app.use(bodyParser.json());
+app.use(express.json());
 app.use(talkerRouter);
 
 const HTTP_OK_STATUS = 200;
