@@ -4,9 +4,9 @@ const { readingFiles } = require('../utils/readingFiles');
 
 const talkerPath = path.join(__dirname, '../talker.json');
 
-const router = express.Router();
+const talkerRouter = express.Router();
 
-router.get('/talker', async (req, res) => {
+talkerRouter.get('/talker', async (req, res) => {
   try {
     const talkers = await readingFiles(talkerPath);
     res.status(200).json(talkers);
@@ -15,7 +15,7 @@ router.get('/talker', async (req, res) => {
   }
 });
 
-router.get('/talker/:id', async (req, res) => {
+talkerRouter.get('/talker/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const talkers = await readingFiles(talkerPath);
@@ -29,4 +29,4 @@ router.get('/talker/:id', async (req, res) => {
   }
 });
 
-module.exports = router;
+module.exports = talkerRouter;
