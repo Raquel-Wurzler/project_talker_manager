@@ -2,10 +2,6 @@ const express = require('express');
 const generateToken = require('../utils/generateToken');
 const { validateEmail } = require('../middleware/validateEmail');
 const { validatePassword } = require('../middleware/validatePassword');
-// const path = require('path');
-// const { readingFiles } = require('../utils/readingFiles');
-
-// const talkerPath = path.join(__dirname, '../talker.json');
 
 const loginRouter = express.Router();
 
