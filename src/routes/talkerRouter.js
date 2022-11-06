@@ -14,6 +14,24 @@ const talkerPath = path.join(__dirname, '../talker.json');
 
 const talkerRouter = express.Router();
 
+talkerRouter.get('/talker/search', validateToken, async (req, res) => {
+  try {
+    const { q } = req.query;
+    const talkers = await readingFiles(talkerPath);
+    const filterTalkers = talkers.filter((talker) => talker.name.toLowerCase()
+      .includes(q.toLowerCase()));
+    if (!q) {
+      return res.status(200).json(talkers);
+    }
+    if (!filterTalkers) {
+      return res.status(200).json([]);
+    }
+    return res.status(200).json(filterTalkers);
+  } catch (error) {
+    return res.status(500).json({ message: `${error.message}` });
+  }
+});
+
 talkerRouter.get('/talker', async (req, res) => {
   try {
     const talkers = await readingFiles(talkerPath);
