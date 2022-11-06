@@ -27,3 +27,4 @@ _"A Trybe é uma escola do futuro para qualquer pessoa que queira melhorar de vi
 * jest.config.js;
 * package-lock.json;
 * package.json;
+* a pasta __tests__;
