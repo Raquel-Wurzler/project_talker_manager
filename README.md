@@ -17,6 +17,7 @@ _"A Trybe é uma escola do futuro para qualquer pessoa que queira melhorar de vi
 * A pasta Utils contém as funções reutilizaveis;
 * Foram utilizadas as funções "readFile" e "writeFile" que estão disponíveis em fs.promisses;
 * Nos arquivos dentro da pasta src contém a descrição dos requisitos;
+* O principal objetivo dos endpoints é criar um C.R.U.D. (Create, Read, Update, Delete) para o arquivo talker.json;
 
 ##### Arquivos disponibilizados pela Trybe:
 * .eslintignore;
