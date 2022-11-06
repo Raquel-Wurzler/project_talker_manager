@@ -1,3 +1,6 @@
+// Crie um middleware de validação para "Password"
+// O campo password é obrigatório e deve ter pelo menos 6 caracteres.
+
 const validatePassword = (req, res, next) => {
   const { password } = req.body;
   if (!password) {

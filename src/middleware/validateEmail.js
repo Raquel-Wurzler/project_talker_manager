@@ -1,3 +1,6 @@
+// Crie um middleware de validação para "Email"
+// O email é obrigatório e deve ser um email válido;
+
 const validateEmail = (req, res, next) => {
   const { email } = req.body;
   const regex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;

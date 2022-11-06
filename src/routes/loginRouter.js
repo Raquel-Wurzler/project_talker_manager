@@ -1,3 +1,5 @@
+// Crie o endpoint POST /login
+// O endpoint deverá receber no corpo da requisição os campos email e password e retornar um token aleatório de 16 caracteres. Deve ter as validações de email e password
 const express = require('express');
 const generateToken = require('../utils/generateToken');
 const { validateEmail } = require('../middleware/validateEmail');

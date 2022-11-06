@@ -1,3 +1,8 @@
+// Crie um middleware de validação para "Talk"
+// Caso o campo não seja informado retorne status 400
+// A chave watchedAt é obrigatória e deve ser uma data no formato dd/mm/aaaa
+// O campo rate é obrigatório deve ser um inteiro de 1 à 5
+
 const validateTalk = (req, res, next) => {
   const { talk } = req.body;
   if (!talk) {

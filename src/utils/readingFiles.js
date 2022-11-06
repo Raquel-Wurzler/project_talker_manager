@@ -1,3 +1,4 @@
+// Função para ler um arquivo Json
 const { readFile } = require('fs').promises;
 
 const readingFiles = async (path) => {

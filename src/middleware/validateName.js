@@ -1,3 +1,8 @@
+// Crie um middleware de validação para "Name"
+// O campo name deverá ter no mínimo 3 caracteres. Ele é obrigatório.
+// Caso o campo não seja passado ou esteja vazio retorne um código de status 400
+// Caso o nome não tenha pelo menos 3 caracteres retorne um código de status 400
+
 const validateName = (req, res, next) => {
   const { name } = req.body;
   if (!name) {

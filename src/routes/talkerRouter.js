@@ -14,6 +14,7 @@ const talkerPath = path.join(__dirname, '../talker.json');
 
 const talkerRouter = express.Router();
 
+// Crie o endpoint GET /talker/search?q=searchTerm e deve retornar um array de palestrantes que contenham em seu nome o termo pesquisado no queryParam da URL. Devendo retornar o status 200, Caso searchTerm não seja informado ou esteja vazio, o endpoint deverá retornar um array com todos as pessoas palestrantes cadastradas, Caso nenhuma pessoa palestrante satisfaça a busca, o endpoint deve retornar o status 200 e um array vazio.
 talkerRouter.get('/talker/search', validateToken, async (req, res) => {
   try {
     const { q } = req.query;
@@ -32,6 +33,7 @@ talkerRouter.get('/talker/search', validateToken, async (req, res) => {
   }
 });
 
+// Crie o endpoint GET /talker e deve retornar o status 200 e um array com todas as pessoas palestrantes cadastradas com a validação de token
 talkerRouter.get('/talker', async (req, res) => {
   try {
     const talkers = await readingFiles(talkerPath);
@@ -41,6 +43,7 @@ talkerRouter.get('/talker', async (req, res) => {
   }
 });
 
+// Crie o endpoint GET /talker/:id e deve retornar o status 200 e uma pessoa palestrante com base no id da rota
 talkerRouter.get('/talker/:id', async (req, res) => {
   try {
     const { id } = req.params;
@@ -55,6 +58,7 @@ talkerRouter.get('/talker/:id', async (req, res) => {
   }
 });
 
+//  Crie o endpoint POST /talker e deve ser capaz de adicionar uma nova pessoa palestrante ao seu arquivo com as validações de token, name, age e talk
 talkerRouter.post('/talker',
   validateToken,
   validateName,
@@ -83,6 +87,7 @@ talkerRouter.post('/talker',
   }
 });
 
+// Crie o endpoint PUT /talker/:id e deve ser capaz de editar uma pessoa palestrante com base no id da rota com as validações de token, name, age e talk
 talkerRouter.put('/talker/:id',
   validateToken,
   validateName,
@@ -106,6 +111,7 @@ talkerRouter.put('/talker/:id',
   }
 });
 
+// Crie o endpoint DELETE /talker/:id e deve ser capaz de deletar uma nova pessoa palestrante ao seu arquivo com a validação de token
 talkerRouter.delete('/talker/:id', validateToken, async (req, res) => {
   try {
     const { id } = req.params;
