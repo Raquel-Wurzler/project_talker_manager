@@ -65,4 +65,27 @@ talkerRouter.post('/talker',
   }
 });
 
+talkerRouter.put('/talker/:id',
+  validateToken,
+  validateName,
+  validateAge,
+  validateTalk,
+  validateWatchedAt,
+  validateRate,
+  async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { name, age, talk } = req.body;
+    const talkers = await readingFiles(talkerPath);
+    const index = talkers.findIndex((talker) => talker.id === Number(id));
+    talkers[index] = {
+      name, age, id: Number(id), talk: { watchedAt: talk.watchedAt, rate: talk.rate },
+    };
+    await writeFile(talkerPath, JSON.stringify(talkers));
+    return res.status(200).json(talkers[index]);
+  } catch (error) {
+    return res.status(500).json({ message: `${error.message}` });
+  }
+});
+
 module.exports = talkerRouter;
