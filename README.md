@@ -12,7 +12,7 @@ _"A Trybe é uma escola do futuro para qualquer pessoa que queira melhorar de vi
 * O arquivo principal é o index.js;
 * Para melhorar a organização utilizei o express.Router() pra separar os endpoints em outros arquivos;
 * Os endpoints foram feitos em arquivos separados pelas rotas: "/login" e "/talker" e estão na pasta Routes;
-* Os middleware foram salvos em uma pasta separada;
+* Os middlewares foram salvos em uma pasta separada;
 * Foram feitos middlewares de validação para "Age", "Email", "Name", "Password", "Talk" e "Token";
 * A pasta Utils contém as funções reutilizaveis;
 * Foram utilizadas as funções "readFile" e "writeFile" que estão disponíveis em fs.promisses;
