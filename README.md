@@ -9,7 +9,7 @@ _"A Trybe é uma escola do futuro para qualquer pessoa que queira melhorar de vi
 ### Principal objetivo:
 * Criar uma API de um CRUD (Create, Read, Update e Delete) de palestrantes, acessando endpoints para fazer login, receber, adicionar e remover palestrantes do arquivo talker.json.
 
-### Habilidades trabalhadas nesse projeto:
+### Detalhes desse projeto:
 * Utilização de um servidor Noje.js;
 * Utilização do framework Express para criar uma rota de um endpoint de API, acessível pelo navegador;
 * O arquivo principal é o index.js;
