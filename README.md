@@ -31,3 +31,7 @@ _"A Trybe é uma escola do futuro para qualquer pessoa que queira melhorar de vi
 * package-lock.json;
 * package.json;
 * a pasta __tests__;
+
+## Stack utilizada
+
+**Back-end:** Node, Express, JavaScript
